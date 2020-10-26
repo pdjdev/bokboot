@@ -9,5 +9,3 @@ Windows에서 텍스트, 파일, 디렉토리를 복사하였을때 복사한 �
 
 ## Merge Conflict 부분
 Commit: [Merge pull request #5 from pdjdev/experimental](https://github.com/pdjdev/bokboot/commit/fc067a12914acca89c06038857ae6a92715d1108)
-
-Detail: [#5](https://github.com/pdjdev/bokboot/pull/5)

@@ -57,8 +57,8 @@ Partial Class Popup
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.TextMenuPanel)
         Me.Panel1.Controls.Add(Me.FileMenuPanel)
+        Me.Panel1.Controls.Add(Me.TextMenuPanel)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 55)
         Me.Panel1.Name = "Panel1"
@@ -104,7 +104,7 @@ Partial Class Popup
         Me.SaveToTxtBT.Name = "SaveToTxtBT"
         Me.SaveToTxtBT.Size = New System.Drawing.Size(151, 46)
         Me.SaveToTxtBT.TabIndex = 3
-        Me.SaveToTxtBT.Text = ".txt로 저장"
+        Me.SaveToTxtBT.Text = "명령줄 실행"
         Me.SaveToTxtBT.UseVisualStyleBackColor = True
         '
         'OpenNotepadBT
@@ -225,6 +225,7 @@ Partial Class Popup
         Me.Font = New System.Drawing.Font("맑은 고딕", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
         Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = Global.bokboot.My.Resources.Resources.whiteicon_6xp_icon
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Popup"
         Me.Opacity = 0.95R

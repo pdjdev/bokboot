@@ -10,7 +10,7 @@ Public Class Form1
 
     Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
         If m.Msg = WM_DRAWCLIPBOARD Then
-
+            Beep()
             ClipboardScanner()
         End If
         MyBase.WndProc(m)
@@ -23,7 +23,7 @@ Public Class Form1
             If Not prevStrData = d Then
                 Popup.Close()
                 Popup.mode = "txt"
-                Popup.txtdata = d.Replace(vbCr, "").Replace(vbLf, "")
+                Popup.txtdata = d
                 Popup.Show()
             End If
 

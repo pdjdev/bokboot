@@ -23,7 +23,7 @@ Public Class Form1
             If Not prevStrData = d Then
                 Popup.Close()
                 Popup.mode = "txt"
-                Popup.txtdata = d
+                Popup.txtdata = d.Replace(vbCr, "").Replace(vbLf, "")
                 Popup.Show()
             End If
 
@@ -48,5 +48,9 @@ Public Class Form1
 
             Popup.mode = ""
         End If
+    End Sub
+
+    Private Sub 종료ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 종료ToolStripMenuItem.Click
+        Application.Exit()
     End Sub
 End Class

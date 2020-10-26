@@ -10,7 +10,7 @@ Public Class Form1
 
     Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
         If m.Msg = WM_DRAWCLIPBOARD Then
-            Beep()
+            'Beep()
             ClipboardScanner()
         End If
         MyBase.WndProc(m)

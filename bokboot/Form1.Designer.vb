@@ -57,13 +57,12 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Magenta
-        Me.ClientSize = New System.Drawing.Size(109, 79)
+        Me.ClientSize = New System.Drawing.Size(10, 10)
         Me.ForeColor = System.Drawing.Color.Fuchsia
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = Global.bokboot.My.Resources.Resources.whiteicon_6xp_icon
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Form1"
-        Me.ShowIcon = False
         Me.Text = "bokboot"
         Me.TransparencyKey = System.Drawing.Color.Magenta
         Me.ContextMenuStrip1.ResumeLayout(False)

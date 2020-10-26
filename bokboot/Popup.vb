@@ -8,6 +8,8 @@ Public Class Popup
     Public txtdata As String = Nothing
     Public filedata As New StringCollection
 
+    Dim mouseOn As Boolean = False
+
     Protected Overrides Sub OnHandleCreated(e As EventArgs)
         CreateDropShadow(Me)
         MyBase.OnHandleCreated(e)
@@ -60,9 +62,9 @@ Public Class Popup
     Private Sub Popup_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Refresh()
 
-        Do While Opacity < 0.9 - 0.1
+        Do While Opacity < 0.8
             Opacity += 0.1
-            Threading.Thread.Sleep(10)
+            Threading.Thread.Sleep(30)
         Loop
 
         Opacity = 0.9
@@ -71,11 +73,11 @@ Public Class Popup
     Private Sub Popup_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Do While Not Opacity = 0
             Opacity = Opacity - 0.1
-            Threading.Thread.Sleep(10)
+            Threading.Thread.Sleep(30)
         Loop
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles CloseBT.Click
         Close()
     End Sub
 
@@ -107,5 +109,36 @@ Public Class Popup
 
     Private Sub OpenDirBT_Click(sender As Object, e As EventArgs) Handles OpenDirBT.Click
         Process.Start(filedata(0).Substring(0, filedata(0).LastIndexOf("\")))
+    End Sub
+
+    Private Sub MouseFadeTimer_Tick(sender As Object, e As EventArgs) Handles MouseFadeTimer.Tick
+
+        If mouseOn Then
+            MouseFadeTimer.Interval = 30
+            If Opacity < 0.8 Then
+                Opacity += 0.02
+            End If
+            TimeoutTimer.Stop()
+        Else
+            MouseFadeTimer.Interval = 100
+            If Opacity > 0.6 Then
+                Opacity -= 0.01
+            End If
+            TimeoutTimer.Start()
+        End If
+    End Sub
+
+    Private Sub MainText_MouseEnter(sender As Object, e As EventArgs) Handles MainText.MouseEnter, CopyDirBT.MouseEnter,
+        OpenDirBT.MouseEnter, OpenNotepadBT.MouseEnter, PlainTextBT.MouseEnter, SaveToTxtBT.MouseEnter, WebSearchBT.MouseEnter
+        mouseOn = True
+    End Sub
+
+    Private Sub MainText_MouseLeave(sender As Object, e As EventArgs) Handles MainText.MouseLeave, CopyDirBT.MouseLeave,
+        OpenDirBT.MouseLeave, OpenNotepadBT.MouseLeave, PlainTextBT.MouseLeave, SaveToTxtBT.MouseLeave, WebSearchBT.MouseLeave
+        mouseOn = False
+    End Sub
+
+    Private Sub TimeoutTimer_Tick(sender As Object, e As EventArgs) Handles TimeoutTimer.Tick
+        Me.Close()
     End Sub
 End Class

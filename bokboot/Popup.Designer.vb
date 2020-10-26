@@ -209,11 +209,11 @@ Partial Class Popup
         Me.CloseBT.FlatAppearance.BorderSize = 0
         Me.CloseBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CloseBT.Font = New System.Drawing.Font("맑은 고딕", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
-        Me.CloseBT.Location = New System.Drawing.Point(583, 0)
+        Me.CloseBT.Location = New System.Drawing.Point(597, 0)
         Me.CloseBT.Name = "CloseBT"
-        Me.CloseBT.Size = New System.Drawing.Size(45, 32)
+        Me.CloseBT.Size = New System.Drawing.Size(31, 32)
         Me.CloseBT.TabIndex = 2
-        Me.CloseBT.Text = "닫기"
+        Me.CloseBT.Text = "X"
         Me.CloseBT.UseVisualStyleBackColor = True
         '
         'MouseFadeTimer

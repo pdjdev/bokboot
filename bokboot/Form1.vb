@@ -25,23 +25,20 @@ Public Class Form1
             Dim d = Clipboard.GetText()
 
             If Not prevStrData = d Then
+                Popup.mode = "txt"
+                prevStrData = d
                 Popup.Show()
             End If
-
-            prevStrData = d
 
         ElseIf Clipboard.ContainsFileDropList Then
 
             Dim fileCollection As StringCollection = Clipboard.GetFileDropList()
 
             If Not fileCollection.Equals(prevFileData) Then
-
-                Dim flist As List(Of String) = fileCollection.Cast(Of String).ToList
+                Popup.mode = "file"
+                prevFileData = fileCollection
                 Popup.Show()
-
             End If
-
-            prevFileData = fileCollection
 
         End If
     End Sub

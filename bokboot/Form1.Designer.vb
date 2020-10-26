@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form1
     Inherits System.Windows.Forms.Form
 
     'Form은 Dispose를 재정의하여 구성 요소 목록을 정리합니다.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,9 @@ Partial Class Form1
     '참고: 다음 프로시저는 Windows Form 디자이너에 필요합니다.
     '수정하려면 Windows Form 디자이너를 사용하십시오.  
     '코드 편집기에서는 수정하지 마세요.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.종료ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -33,7 +32,7 @@ Partial Class Form1
         'NotifyIcon1
         '
         Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Icon = Global.bokboot.My.Resources.Resources.whiteicon_6xp_icon
         Me.NotifyIcon1.Text = "bokboot"
         Me.NotifyIcon1.Visible = True
         '
@@ -57,15 +56,16 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Magenta
         Me.ClientSize = New System.Drawing.Size(109, 79)
+        Me.ForeColor = System.Drawing.Color.Fuchsia
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = Global.bokboot.My.Resources.Resources.whiteicon_6xp_icon
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Form1"
-        Me.Opacity = 0R
         Me.ShowIcon = False
-        Me.ShowInTaskbar = False
-        Me.Text = "Form1"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
+        Me.Text = "bokboot"
+        Me.TransparencyKey = System.Drawing.Color.Magenta
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

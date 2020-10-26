@@ -53,4 +53,8 @@ Public Class Form1
     Private Sub 종료ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 종료ToolStripMenuItem.Click
         Application.Exit()
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Hide()
+    End Sub
 End Class

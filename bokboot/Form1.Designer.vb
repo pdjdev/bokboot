@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.종료ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -32,7 +33,8 @@ Partial Class Form1
         'NotifyIcon1
         '
         Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.NotifyIcon1.Text = "NotifyIcon1"
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
+        Me.NotifyIcon1.Text = "bokboot"
         Me.NotifyIcon1.Visible = True
         '
         'ContextMenuStrip1
@@ -48,18 +50,22 @@ Partial Class Form1
         '
         Me.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem"
         Me.종료ToolStripMenuItem.ShowShortcutKeys = False
-        Me.종료ToolStripMenuItem.Size = New System.Drawing.Size(185, 24)
+        Me.종료ToolStripMenuItem.Size = New System.Drawing.Size(74, 24)
         Me.종료ToolStripMenuItem.Text = "종료"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(165, 126)
+        Me.ClientSize = New System.Drawing.Size(109, 79)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Form1"
+        Me.Opacity = 0R
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.Text = "Form1"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

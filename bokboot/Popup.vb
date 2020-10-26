@@ -81,4 +81,21 @@ Public Class Popup
     Private Sub PlainTextBT_Click(sender As Object, e As EventArgs) Handles PlainTextBT.Click
         Clipboard.SetText(txtdata)
     End Sub
+
+    Private Sub WebSearchBT_Click(sender As Object, e As EventArgs) Handles WebSearchBT.Click
+        Process.Start("https://www.google.com/search?q=" + txtdata)
+    End Sub
+
+    Private Sub OpenNotepadBT_Click(sender As Object, e As EventArgs) Handles OpenNotepadBT.Click
+        Dim exeFullpath As String = Application.ExecutablePath
+        Dim exeDir As String = exeFullpath.Substring(0, exeFullpath.LastIndexOf("\"))
+        Dim finalName As String = "clipboard.txt"
+
+        My.Computer.FileSystem.WriteAllText(exeDir + "\" + finalName, txtdata, False, System.Text.Encoding.GetEncoding(949))
+        Process.Start("notepad.exe", exeDir + "\" + finalName)
+    End Sub
+
+    Private Sub SaveToTxtBT_Click(sender As Object, e As EventArgs) Handles SaveToTxtBT.Click
+        Process.Start("powershell.exe", "/c """ + txtdata + """")
+    End Sub
 End Class

@@ -39,6 +39,8 @@ Public Class Popup
 
                 MainText.Text += "가 추가되었습니다."
 
+                MainText.Text = MainText.Text.Replace(vbCr, "").Replace(vbLf, "")
+
             Case "file"
                 TextMenuPanel.Visible = False
                 FileMenuPanel.Visible = True
@@ -97,5 +99,13 @@ Public Class Popup
 
     Private Sub SaveToTxtBT_Click(sender As Object, e As EventArgs) Handles SaveToTxtBT.Click
         Process.Start("powershell.exe", "/c """ + txtdata + """")
+    End Sub
+
+    Private Sub CopyDirBT_Click(sender As Object, e As EventArgs) Handles CopyDirBT.Click
+        Clipboard.SetText(String.Join(vbCrLf, filedata.Cast(Of String).ToList))
+    End Sub
+
+    Private Sub OpenDirBT_Click(sender As Object, e As EventArgs) Handles OpenDirBT.Click
+        Process.Start(filedata(0).Substring(0, filedata(0).LastIndexOf("\")))
     End Sub
 End Class

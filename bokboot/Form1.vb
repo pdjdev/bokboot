@@ -23,7 +23,7 @@ Public Class Form1
             If Not prevStrData = d Then
                 Popup.Close()
                 Popup.mode = "txt"
-                Popup.txtdata = d.Replace(vbCr, "").Replace(vbLf, "")
+                Popup.txtdata = d
                 Popup.Show()
             End If
 

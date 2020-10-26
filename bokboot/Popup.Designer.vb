@@ -44,7 +44,7 @@ Partial Class Popup
         'MainText
         '
         Me.MainText.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MainText.Font = New System.Drawing.Font("맑은 고딕 Semilight", 15.0!)
+        Me.MainText.Font = New System.Drawing.Font("맑은 고딕 Semilight", 14.0!)
         Me.MainText.Location = New System.Drawing.Point(0, 0)
         Me.MainText.Margin = New System.Windows.Forms.Padding(0)
         Me.MainText.Name = "MainText"

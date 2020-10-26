@@ -76,4 +76,9 @@ Public Class Popup
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Close()
     End Sub
+
+    '텍스트 서식 지우기 -> 일반 텍스트 클립보드에 저장
+    Private Sub PlainTextBT_Click(sender As Object, e As EventArgs) Handles PlainTextBT.Click
+        Clipboard.SetText(txtdata)
+    End Sub
 End Class

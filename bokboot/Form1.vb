@@ -5,11 +5,8 @@ Public Class Form1
     Private Declare Function SetClipboardViewer Lib "user32" Alias "SetClipboardViewer" (ByVal hwnd As Integer) As Integer
     Dim result As Integer = SetClipboardViewer(MyBase.Handle.ToInt32)
 
-    Public prevClipboardData As IDataObject = Nothing
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
+    Private prevStrData As String = ""
+    Private prevFileData As New StringCollection
 
     Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
         If m.Msg = WM_DRAWCLIPBOARD Then
@@ -24,16 +21,28 @@ Public Class Form1
 
     Public Sub ClipboardScanner()
         If Clipboard.ContainsText() Then
+
             Dim d = Clipboard.GetText()
-            MsgBox(d)
+
+            If Not prevStrData = d Then
+                Popup.Show()
+            End If
+
+            prevStrData = d
 
         ElseIf Clipboard.ContainsFileDropList Then
 
             Dim fileCollection As StringCollection = Clipboard.GetFileDropList()
 
-            For Each f In fileCollection
-                MsgBox(f)
-            Next
+            If Not fileCollection.Equals(prevFileData) Then
+
+                Dim flist As List(Of String) = fileCollection.Cast(Of String).ToList
+                Popup.Show()
+
+            End If
+
+            prevFileData = fileCollection
+
         End If
     End Sub
 End Class

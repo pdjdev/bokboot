@@ -60,8 +60,8 @@ Partial Class Popup
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.FileMenuPanel)
         Me.Panel1.Controls.Add(Me.TextMenuPanel)
+        Me.Panel1.Controls.Add(Me.FileMenuPanel)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 55)
         Me.Panel1.Name = "Panel1"

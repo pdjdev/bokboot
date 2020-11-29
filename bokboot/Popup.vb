@@ -31,17 +31,17 @@ Public Class Popup
             Case "txt"
                 TextMenuPanel.Visible = True
                 FileMenuPanel.Visible = False
-                MainText.Text = "텍스트("
+                MainText.Text = ""
 
-                If txtdata.Length > 20 Then
-                    MainText.Text += Mid(txtdata, 1, 10) + "..." + Mid(txtdata, txtdata.Length - 9, txtdata.Length) + ")"
+                Dim tmptxt = txtdata.Replace(vbCr, "").Replace(vbLf, "").Replace(vbTab, "")
+
+                If tmptxt.Length > 28 Then
+                    MainText.Text += Mid(tmptxt, 1, 14) + " ... " + Mid(tmptxt, tmptxt.Length - 14, tmptxt.Length)
                 Else
-                    MainText.Text += txtdata + ")"
+                    MainText.Text += tmptxt
                 End If
 
-                MainText.Text += "가 추가되었습니다."
-
-                MainText.Text = MainText.Text.Replace(vbCr, "").Replace(vbLf, "")
+                'MainText.Text += " 복사됨"
 
             Case "file"
                 TextMenuPanel.Visible = False
@@ -49,12 +49,12 @@ Public Class Popup
 
                 Dim firstFileName As String = Mid(filedata(0), filedata(0).LastIndexOf("\") + 2, filedata(0).Length)
                 If firstFileName.Length > 20 Then _
-                    firstFileName = Mid(firstFileName, 1, 10) + "..." + Mid(firstFileName, firstFileName.Length - 9, firstFileName.Length)
+                    firstFileName = Mid(firstFileName, 1, 10) + " ... " + Mid(firstFileName, firstFileName.Length - 9, firstFileName.Length)
 
                 If filedata.Count > 1 Then
-                    MainText.Text = "파일(" + firstFileName + "외 " + filedata.Count.ToString + ")이 복사되었습니다."
+                    MainText.Text = "파일(" + firstFileName + "외 " + filedata.Count.ToString + ") 복사됨"
                 Else
-                    MainText.Text = "파일(" + firstFileName + ")이 복사되었습니다."
+                    MainText.Text = "파일(" + firstFileName + ") 복사됨"
                 End If
         End Select
     End Sub
@@ -95,8 +95,13 @@ Public Class Popup
         Dim exeDir As String = exeFullpath.Substring(0, exeFullpath.LastIndexOf("\"))
         Dim finalName As String = "clipboard.txt"
 
-        My.Computer.FileSystem.WriteAllText(exeDir + "\" + finalName, txtdata, False, System.Text.Encoding.GetEncoding(949))
-        Process.Start("notepad.exe", exeDir + "\" + finalName)
+        '임시파일 디렉토리에 클립보드 텍스트 파일 저장
+        'My.Computer.FileSystem.WriteAllText(exeDir + "\" + finalName, txtdata, False, System.Text.Encoding.GetEncoding(949))
+        My.Computer.FileSystem.WriteAllText(My.Computer.FileSystem.SpecialDirectories.Temp + "\" + finalName,
+                                            txtdata, False, System.Text.Encoding.GetEncoding(949))
+
+
+        Process.Start("notepad.exe", My.Computer.FileSystem.SpecialDirectories.Temp + "\" + finalName)
     End Sub
 
     Private Sub SaveToTxtBT_Click(sender As Object, e As EventArgs) Handles SaveToTxtBT.Click

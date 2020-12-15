@@ -10,7 +10,7 @@ Public Class Form1
 
     Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
         If m.Msg = WM_DRAWCLIPBOARD Then
-            Beep()
+            'Beep()
             ClipboardScanner()
         End If
         MyBase.WndProc(m)
@@ -35,10 +35,14 @@ Public Class Form1
 
             If Not fileCollection.Equals(prevFileData) And Not prevFileData Is Nothing Then
 
-                Popup.Close()
-                Popup.mode = "file"
-                Popup.filedata = fileCollection
-                Popup.Show()
+                Try
+                    Popup.Close()
+                    Popup.mode = "file"
+                    Popup.filedata = fileCollection
+                    Popup.Show()
+                Catch ex As Exception
+                    '폼 실행 오류 발생
+                End Try
 
             End If
 

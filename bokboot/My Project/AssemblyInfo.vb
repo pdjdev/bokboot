@@ -9,13 +9,13 @@ Imports System.Runtime.InteropServices
 ' 어셈블리 특성 값을 검토합니다.
 
 <Assembly: AssemblyTitle("bokboot")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("Clipboard Utility")>
+<Assembly: AssemblyCompany("PBJSoftware")>
 <Assembly: AssemblyProduct("bokboot")>
-<Assembly: AssemblyCopyright("Copyright ©  2018")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyCopyright("Copyright © PBJSoftware 2020")>
+<Assembly: AssemblyTrademark("PBJSoftware")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 '이 프로젝트가 COM에 노출되는 경우 다음 GUID는 typelib의 ID를 나타냅니다.
 <Assembly: Guid("9fe77bd7-4344-4270-a293-a62b711425b3")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 지정되도록 할 수 있습니다.
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("0.1.0.0")>
+<Assembly: AssemblyFileVersion("0.1.0.0")>

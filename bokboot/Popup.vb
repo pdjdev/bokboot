@@ -82,15 +82,15 @@ Public Class Popup
     End Sub
 
     '텍스트 서식 지우기 -> 일반 텍스트 클립보드에 저장
-    Private Sub PlainTextBT_Click(sender As Object, e As EventArgs) Handles PlainTextBT.Click
+    Private Sub PlainTextBT_Click(sender As Object, e As EventArgs) Handles PlainTextBT.Click, PlainTextBT_Icon.Click, PlainTextBT_Label.Click
         Clipboard.SetText(txtdata)
     End Sub
 
-    Private Sub WebSearchBT_Click(sender As Object, e As EventArgs) Handles WebSearchBT.Click
+    Private Sub WebSearchBT_Click(sender As Object, e As EventArgs) Handles WebSearchBT.Click, WebSearchBT_Icon.Click, WebSearchBT_Label.Click
         Process.Start("https://www.google.com/search?q=" + txtdata)
     End Sub
 
-    Private Sub OpenNotepadBT_Click(sender As Object, e As EventArgs) Handles OpenNotepadBT.Click
+    Private Sub OpenNotepadBT_Click(sender As Object, e As EventArgs) Handles OpenNotepadBT.Click, OpenNotepadBT_Icon.Click, OpenNotepadBT_Label.Click
         Dim exeFullpath As String = Application.ExecutablePath
         Dim exeDir As String = exeFullpath.Substring(0, exeFullpath.LastIndexOf("\"))
         Dim finalName As String = "clipboard.txt"
@@ -104,15 +104,15 @@ Public Class Popup
         Process.Start("notepad.exe", My.Computer.FileSystem.SpecialDirectories.Temp + "\" + finalName)
     End Sub
 
-    Private Sub SaveToTxtBT_Click(sender As Object, e As EventArgs) Handles SaveToTxtBT.Click
+    Private Sub ShellCMDBT_Click(sender As Object, e As EventArgs) Handles ShellCMDBT.Click, ShellCMDBT_Icon.Click, ShellCMDBT_Label.Click
         Process.Start("powershell.exe", "/c """ + txtdata + """")
     End Sub
 
-    Private Sub CopyDirBT_Click(sender As Object, e As EventArgs) Handles CopyDirBT.Click
+    Private Sub CopyDirBT_Click(sender As Object, e As EventArgs) Handles CopyDirBT.Click, CopyDirBT_Icon.Click, CopyDirBT_Label.Click
         Clipboard.SetText(String.Join(vbCrLf, filedata.Cast(Of String).ToList))
     End Sub
 
-    Private Sub OpenDirBT_Click(sender As Object, e As EventArgs) Handles OpenDirBT.Click
+    Private Sub OpenDirBT_Click(sender As Object, e As EventArgs) Handles OpenDirBT.Click, OpenDirBT_Icon.Click, OpenDirBT_Label.Click
         Process.Start(filedata(0).Substring(0, filedata(0).LastIndexOf("\")))
     End Sub
 
@@ -133,17 +133,65 @@ Public Class Popup
         End If
     End Sub
 
-    Private Sub MainText_MouseEnter(sender As Object, e As EventArgs) Handles MainText.MouseEnter, CopyDirBT.MouseEnter,
-        OpenDirBT.MouseEnter, OpenNotepadBT.MouseEnter, PlainTextBT.MouseEnter, SaveToTxtBT.MouseEnter, WebSearchBT.MouseEnter
+    Private Sub MainText_MouseEnter(sender As Object, e As EventArgs) Handles MainText.MouseEnter, PlainTextBT_Label.MouseEnter,
+        WebSearchBT_Label.MouseEnter, OpenNotepadBT_Label.MouseEnter, ShellCMDBT_Label.MouseEnter, CopyDirBT_Label.MouseEnter, OpenDirBT_Label.MouseEnter
         mouseOn = True
     End Sub
 
-    Private Sub MainText_MouseLeave(sender As Object, e As EventArgs) Handles MainText.MouseLeave, CopyDirBT.MouseLeave,
-        OpenDirBT.MouseLeave, OpenNotepadBT.MouseLeave, PlainTextBT.MouseLeave, SaveToTxtBT.MouseLeave, WebSearchBT.MouseLeave
+    Private Sub MainText_MouseLeave(sender As Object, e As EventArgs) Handles MainText.MouseLeave, PlainTextBT_Label.MouseLeave,
+        WebSearchBT_Label.MouseLeave, OpenNotepadBT_Label.MouseLeave, ShellCMDBT_Label.MouseLeave, CopyDirBT_Label.MouseLeave, OpenDirBT_Label.MouseLeave
         mouseOn = False
     End Sub
 
     Private Sub TimeoutTimer_Tick(sender As Object, e As EventArgs) Handles TimeoutTimer.Tick
         Me.Close()
+    End Sub
+
+    Private Sub PlainTextBT_Label_MouseEnter(sender As Object, e As EventArgs) Handles PlainTextBT_Label.MouseEnter
+        PlainTextBT.BackColor = Color.FromArgb(69, 69, 69)
+    End Sub
+
+    Private Sub PlainTextBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles PlainTextBT_Label.MouseLeave
+        PlainTextBT.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub WebSearchBT_Label_MouseEnter(sender As Object, e As EventArgs) Handles WebSearchBT_Label.MouseEnter
+        WebSearchBT.BackColor = Color.FromArgb(69, 69, 69)
+    End Sub
+
+    Private Sub WebSearchBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles WebSearchBT_Label.MouseLeave
+        WebSearchBT.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub OpenNotepad_Label_MouseEnter(sender As Object, e As EventArgs) Handles OpenNotepadBT_Label.MouseEnter
+        OpenNotepadBT.BackColor = Color.FromArgb(69, 69, 69)
+    End Sub
+
+    Private Sub OpenNotepadBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles OpenNotepadBT_Label.MouseLeave
+        OpenNotepadBT.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub ShellCMDBT_Label_MouseEnter(sender As Object, e As EventArgs) Handles ShellCMDBT_Label.MouseEnter
+        ShellCMDBT.BackColor = Color.FromArgb(69, 69, 69)
+    End Sub
+
+    Private Sub ShellCMDBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles ShellCMDBT_Label.MouseLeave
+        ShellCMDBT.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub CopyDirBT_Label_MouseEnter(sender As Object, e As EventArgs) Handles CopyDirBT_Label.MouseEnter
+        CopyDirBT.BackColor = Color.FromArgb(69, 69, 69)
+    End Sub
+
+    Private Sub CopyDirBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles CopyDirBT_Label.MouseLeave
+        CopyDirBT.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub OpenDirBT_Label_MouseEnter(sender As Object, e As EventArgs) Handles OpenDirBT_Label.MouseEnter
+        OpenDirBT.BackColor = Color.FromArgb(69, 69, 69)
+    End Sub
+
+    Private Sub OpenDirBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles OpenDirBT_Label.MouseLeave
+        OpenDirBT.BackColor = Color.Transparent
     End Sub
 End Class

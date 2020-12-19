@@ -10,6 +10,9 @@ Public Class Popup
 
     Dim mouseOn As Boolean = False
 
+    ' 마우스 올려졌을때 색상
+    Private ReadOnly mouseOn_color As Color = Color.FromArgb(69, 69, 69)
+
     Protected Overrides Sub OnHandleCreated(e As EventArgs)
         CreateDropShadow(Me)
         MyBase.OnHandleCreated(e)
@@ -148,7 +151,7 @@ Public Class Popup
     End Sub
 
     Private Sub PlainTextBT_Label_MouseEnter(sender As Object, e As EventArgs) Handles PlainTextBT_Label.MouseEnter
-        PlainTextBT.BackColor = Color.FromArgb(69, 69, 69)
+        PlainTextBT.BackColor = mouseOn_color
     End Sub
 
     Private Sub PlainTextBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles PlainTextBT_Label.MouseLeave
@@ -156,7 +159,7 @@ Public Class Popup
     End Sub
 
     Private Sub WebSearchBT_Label_MouseEnter(sender As Object, e As EventArgs) Handles WebSearchBT_Label.MouseEnter
-        WebSearchBT.BackColor = Color.FromArgb(69, 69, 69)
+        WebSearchBT.BackColor = mouseOn_color
     End Sub
 
     Private Sub WebSearchBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles WebSearchBT_Label.MouseLeave
@@ -164,7 +167,7 @@ Public Class Popup
     End Sub
 
     Private Sub OpenNotepad_Label_MouseEnter(sender As Object, e As EventArgs) Handles OpenNotepadBT_Label.MouseEnter
-        OpenNotepadBT.BackColor = Color.FromArgb(69, 69, 69)
+        OpenNotepadBT.BackColor = mouseOn_color
     End Sub
 
     Private Sub OpenNotepadBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles OpenNotepadBT_Label.MouseLeave
@@ -172,7 +175,7 @@ Public Class Popup
     End Sub
 
     Private Sub ShellCMDBT_Label_MouseEnter(sender As Object, e As EventArgs) Handles ShellCMDBT_Label.MouseEnter
-        ShellCMDBT.BackColor = Color.FromArgb(69, 69, 69)
+        ShellCMDBT.BackColor = mouseOn_color
     End Sub
 
     Private Sub ShellCMDBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles ShellCMDBT_Label.MouseLeave
@@ -180,7 +183,7 @@ Public Class Popup
     End Sub
 
     Private Sub CopyDirBT_Label_MouseEnter(sender As Object, e As EventArgs) Handles CopyDirBT_Label.MouseEnter
-        CopyDirBT.BackColor = Color.FromArgb(69, 69, 69)
+        CopyDirBT.BackColor = mouseOn_color
     End Sub
 
     Private Sub CopyDirBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles CopyDirBT_Label.MouseLeave
@@ -188,7 +191,7 @@ Public Class Popup
     End Sub
 
     Private Sub OpenDirBT_Label_MouseEnter(sender As Object, e As EventArgs) Handles OpenDirBT_Label.MouseEnter
-        OpenDirBT.BackColor = Color.FromArgb(69, 69, 69)
+        OpenDirBT.BackColor = mouseOn_color
     End Sub
 
     Private Sub OpenDirBT_Label_MouseLeave(sender As Object, e As EventArgs) Handles OpenDirBT_Label.MouseLeave

@@ -63,7 +63,7 @@ Ditto는 Windows Clipboard가 나오기 이전부터 이용되었던 강력한 �
 - 프로그램 최종 릴리즈 후 배포
 
 
-## 4. 프로그램의 참여 방법
+## 4. 프로의 참여 방법
 ### 프로젝트에 수정 사항/문제점을 발견한 경우
 [bokboot 리포지토리의 이슈 페이지](https://github.com/pdjdev/bokboot/issues)로 가 새 이슈를 생성합니다.
 

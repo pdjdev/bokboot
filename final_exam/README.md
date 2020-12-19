@@ -14,7 +14,11 @@
 ### [리뷰 #1](https://github.com/pdjdev/bokboot/commit/34a930d688d4d662723a126f9d0b2f2a95d82b69#r45239164)
 ### [리뷰 #2](https://github.com/pdjdev/bokboot/pull/11#pullrequestreview-555376998) [(관련 이슈)](https://github.com/pdjdev/bokboot/issues/10)
 ### [리뷰 #3](https://github.com/pdjdev/bokboot/commit/f7d037cad5cd155ef42afa263bf8054204deb404#r45262589)
+### [리뷰 #4](https://github.com/pdjdev/bokboot/commit/c1e21d903f1967e43cd48b2ea1d560699b313ccc#r45267294)
 
 ## 커뮤니케이션 기록
 
 ### [문서 링크](documents/communication.md)
+
+### [이슈 #1](https://github.com/pdjdev/bokboot/issues/9)
+### [이슈 #2](https://github.com/pdjdev/bokboot/issues/10)

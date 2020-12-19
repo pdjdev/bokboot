@@ -17,4 +17,4 @@
 
 ## 커뮤니케이션 기록
 
-### [문서 링크](documents/)
+### [문서 링크](documents/communication.md)

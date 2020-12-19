@@ -64,4 +64,14 @@ Ditto는 Windows Clipboard가 나오기 이전부터 이용되었던 강력한 �
 
 
 ## 4. 프로그램의 참여 방법
+### 프로젝트에 수정 사항/문제점을 발견한 경우
+[bokboot 리포지토리의 이슈 페이지](https://github.com/pdjdev/bokboot/issues)로 가 새 이슈를 생성합니다.
+
+혹은 개발자의 메일(pdj5096@gmail.com 또는 pdj5096@hanyang.ac.kr)을 통해 보고합니다.
+
+### 프로젝트에 기여를 하고 싶은 경우
+[bokboot 리포지토리](https://github.com/pdjdev/bokboot)를 포크하고 원하는 사항을 수정한 뒤, Pull Request를 요청합니다.
+
+기여 사항을 개발자가 리뷰하고, 적절하다고 판단될 경우 Merge를 진행합니다.
+
 
